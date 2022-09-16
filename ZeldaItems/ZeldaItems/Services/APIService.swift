@@ -23,9 +23,31 @@ class APIService {
                     print("Log:", jsonList)
                                                                                 
                     let decoder = JSONDecoder()
-                    let decoded = try decoder.decode([String:[CategoryItem]].self, from: jsonData)
                     
-                    completion(decoded["data"] ?? [], error)
+                    if type == .creatures {
+                        let decoded = try decoder.decode([String: [String:[CategoryItem]] ].self, from: jsonData)
+                        
+                        guard let decodedData = decoded["data"],
+                                let decodedFood = decodedData["food"],
+                              let decodedNonFood = decodedData["non_food"]
+                        else {
+                            completion([], error)
+                            return
+                        }
+                        
+                        print("Log:", decodedData)
+                        
+                        var decodedAll:[CategoryItem] = []
+                        decodedAll.append(contentsOf: decodedFood)
+                        decodedAll.append(contentsOf: decodedNonFood)
+                        
+                        print("Log:", decodedAll)
+
+                        completion(decodedAll, error)
+                    } else {
+                        let decoded = try decoder.decode([String:[CategoryItem]].self, from: jsonData)
+                        completion(decoded["data"] ?? [], error)
+                    }
                 } else {
                     completion([], error)
                 }
