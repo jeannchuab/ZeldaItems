@@ -11,6 +11,7 @@ class HomeViewController: UIViewController {
         
     @IBOutlet weak var stackView: UIStackView!
     var viewModel: ViewModel?
+    var category: Category = .creatures
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,11 +32,21 @@ class HomeViewController: UIViewController {
             self.viewModel?.fetch(type: sender.titleLabel?.text ?? "")
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let viewController = segue.destination as? CategoryItemViewController {
+            viewController.title = category.getTitle()
+            viewController.viewModel = self.viewModel
+        }
+    }
 }
 
 extension HomeViewController: ViewModelDelegate {
-    func showCategoryItems() {
-        debugPrint(viewModel?.categoryItems)
+    func showCategoryItems(_ category: Category) {
+        self.category = category        
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: "showCategoryItems", sender: self)
+        }
     }
     
     func showError() {        

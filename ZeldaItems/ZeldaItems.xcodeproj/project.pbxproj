@@ -20,6 +20,9 @@
 		95AE22DD28D4C9F100EF1B72 /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AE22DC28D4C9F100EF1B72 /* Animations.swift */; };
 		95AE22E028D4CBA100EF1B72 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AE22DF28D4CBA100EF1B72 /* ViewModel.swift */; };
 		95AE22E228D4CDFF00EF1B72 /* CategoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AE22E128D4CDFF00EF1B72 /* CategoryItem.swift */; };
+		95AE22E428D4FC1000EF1B72 /* CategoryItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AE22E328D4FC1000EF1B72 /* CategoryItemViewController.swift */; };
+		95AE22E928D4FCCF00EF1B72 /* CategoryItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AE22E728D4FCCF00EF1B72 /* CategoryItemTableViewCell.swift */; };
+		95AE22EA28D4FCCF00EF1B72 /* CategoryItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95AE22E828D4FCCF00EF1B72 /* CategoryItemTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,9 @@
 		95AE22DC28D4C9F100EF1B72 /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
 		95AE22DF28D4CBA100EF1B72 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		95AE22E128D4CDFF00EF1B72 /* CategoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItem.swift; sourceTree = "<group>"; };
+		95AE22E328D4FC1000EF1B72 /* CategoryItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItemViewController.swift; sourceTree = "<group>"; };
+		95AE22E728D4FCCF00EF1B72 /* CategoryItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItemTableViewCell.swift; sourceTree = "<group>"; };
+		95AE22E828D4FCCF00EF1B72 /* CategoryItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryItemTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +113,7 @@
 		95AE22A528D4BB2000EF1B72 /* ZeldaItems */ = {
 			isa = PBXGroup;
 			children = (
+				95AE22E628D4FCAF00EF1B72 /* Views */,
 				95AE22B428D4BB2300EF1B72 /* Info.plist */,
 				95AE22A628D4BB2000EF1B72 /* AppDelegate.swift */,
 				95AE22A828D4BB2000EF1B72 /* SceneDelegate.swift */,
@@ -150,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				95AE22AA28D4BB2000EF1B72 /* HomeViewController.swift */,
+				95AE22E328D4FC1000EF1B72 /* CategoryItemViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -177,6 +185,15 @@
 				95AE22D628D4BBB600EF1B72 /* APIService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		95AE22E628D4FCAF00EF1B72 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				95AE22E728D4FCCF00EF1B72 /* CategoryItemTableViewCell.swift */,
+				95AE22E828D4FCCF00EF1B72 /* CategoryItemTableViewCell.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,6 +302,7 @@
 			files = (
 				95AE22B328D4BB2300EF1B72 /* LaunchScreen.storyboard in Resources */,
 				95AE22B028D4BB2300EF1B72 /* Assets.xcassets in Resources */,
+				95AE22EA28D4FCCF00EF1B72 /* CategoryItemTableViewCell.xib in Resources */,
 				95AE22AE28D4BB2000EF1B72 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -311,11 +329,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				95AE22AB28D4BB2000EF1B72 /* HomeViewController.swift in Sources */,
+				95AE22E928D4FCCF00EF1B72 /* CategoryItemTableViewCell.swift in Sources */,
 				95AE22DD28D4C9F100EF1B72 /* Animations.swift in Sources */,
 				95AE22A728D4BB2000EF1B72 /* AppDelegate.swift in Sources */,
 				95AE22E228D4CDFF00EF1B72 /* CategoryItem.swift in Sources */,
 				95AE22D728D4BBB600EF1B72 /* APIService.swift in Sources */,
 				95AE22E028D4CBA100EF1B72 /* ViewModel.swift in Sources */,
+				95AE22E428D4FC1000EF1B72 /* CategoryItemViewController.swift in Sources */,
 				95AE22A928D4BB2000EF1B72 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

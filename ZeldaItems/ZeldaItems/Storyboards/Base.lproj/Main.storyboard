@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21208.1" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21208.1" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Lav-Xv-pWI">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -18,10 +18,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="e3a-Wd-dau">
-                                <rect key="frame" x="12" y="56" width="351" height="710"/>
+                                <rect key="frame" x="12" y="100" width="351" height="666"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zlp-HE-Bp4">
-                                        <rect key="frame" x="0.0" y="0.0" width="351" height="132.33333333333334"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="351" height="123.66666666666667"/>
                                         <color key="backgroundColor" red="0.25651850729999998" green="0.51197303890000001" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain">
@@ -57,7 +57,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3uN-fI-jSe">
-                                        <rect key="frame" x="0.0" y="144.33333333333331" width="351" height="132.33333333333331"/>
+                                        <rect key="frame" x="0.0" y="135.66666666666666" width="351" height="123.66666666666666"/>
                                         <color key="backgroundColor" red="0.43645967800000002" green="0.66666668650000005" blue="0.51067603409999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain">
@@ -97,7 +97,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ga5-UV-kGi">
-                                        <rect key="frame" x="0.0" y="288.66666666666669" width="351" height="132.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="271.33333333333331" width="351" height="123.33333333333331"/>
                                         <color key="backgroundColor" red="0.60750972619999999" green="0.43207498709999997" blue="0.66666668650000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain">
@@ -130,7 +130,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3fK-Ef-Hdb">
-                                        <rect key="frame" x="0.0" y="433.33333333333331" width="351" height="132.33333333333331"/>
+                                        <rect key="frame" x="0.0" y="406.66666666666669" width="351" height="123.66666666666669"/>
                                         <color key="backgroundColor" red="0.66666668650000005" green="0.43121836930000002" blue="0.32138582139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain">
@@ -163,7 +163,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nxw-9p-b4q">
-                                        <rect key="frame" x="0.0" y="577.66666666666663" width="351" height="132.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="542.33333333333337" width="351" height="123.66666666666663"/>
                                         <color key="backgroundColor" red="0.66666668650000005" green="0.66345070299999997" blue="0.17956624909999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain">
@@ -207,13 +207,64 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="e3a-Wd-dau" secondAttribute="trailing" constant="12" id="yTg-jS-vRH"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="bcu-k3-qk3"/>
                     <connections>
                         <outlet property="stackView" destination="e3a-Wd-dau" id="i8J-jV-GKT"/>
+                        <segue destination="Nkj-od-pZY" kind="show" identifier="showCategoryItems" id="yZw-SV-kYH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131" y="-7"/>
+            <point key="canvasLocation" x="1072.8" y="-7.389162561576355"/>
+        </scene>
+        <!--Category Item View Controller-->
+        <scene sceneID="wIq-VF-FEY">
+            <objects>
+                <viewController storyboardIdentifier="CategoryItemViewController" modalPresentationStyle="fullScreen" id="Nkj-od-pZY" customClass="CategoryItemViewController" customModule="ZeldaItems" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SYe-dc-YGK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="WaP-BW-UAn">
+                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="WQb-Eg-GCe"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="WaP-BW-UAn" firstAttribute="top" secondItem="WQb-Eg-GCe" secondAttribute="top" id="Iir-5Q-Egq"/>
+                            <constraint firstItem="WaP-BW-UAn" firstAttribute="leading" secondItem="WQb-Eg-GCe" secondAttribute="leading" id="RqN-sS-2uF"/>
+                            <constraint firstItem="WQb-Eg-GCe" firstAttribute="bottom" secondItem="WaP-BW-UAn" secondAttribute="bottom" id="Z2r-th-u7c"/>
+                            <constraint firstItem="WQb-Eg-GCe" firstAttribute="trailing" secondItem="WaP-BW-UAn" secondAttribute="trailing" id="kXA-jl-AKl"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Afd-f7-jOr"/>
+                    <connections>
+                        <outlet property="tableView" destination="WaP-BW-UAn" id="zdn-V0-Gf7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lcn-dy-lCE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2052" y="-7.389162561576355"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jDd-ap-Aag">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Lav-Xv-pWI" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hsX-Ns-B8O">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="CDp-TC-K1d"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SOd-Yc-cjj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="130.40000000000001" y="-7.389162561576355"/>
         </scene>
     </scenes>
     <resources>

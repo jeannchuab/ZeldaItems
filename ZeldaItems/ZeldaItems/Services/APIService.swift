@@ -11,7 +11,7 @@ class APIService {
     
     private let apiURL = "https://botw-compendium.herokuapp.com/api/v2/category/"
     
-    func getCategoryItems(_ type: Categories, completion: @escaping ([CategoryItem], Error?) -> Void) {        
+    func getCategoryItems(_ type: Category, completion: @escaping ([CategoryItem], Error?) -> Void) {        
         get(type.rawValue) { data, error in
             guard let jsonData = data else {
                 completion([], error)
@@ -23,7 +23,7 @@ class APIService {
                     print("Log:", jsonList)
                                                                                 
                     let decoder = JSONDecoder()
-                    let decoded = try decoder.decode([String:[CategoryItem]].self, from: jsonData)                    
+                    let decoded = try decoder.decode([String:[CategoryItem]].self, from: jsonData)
                     
                     completion(decoded["data"] ?? [], error)
                 } else {

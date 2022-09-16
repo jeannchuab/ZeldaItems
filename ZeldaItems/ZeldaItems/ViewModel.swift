@@ -7,34 +7,42 @@
 
 import Foundation
 
-enum Categories: String, CaseIterable {
+enum Category: String, CaseIterable {
     case creatures
     case equipment
     case materials
     case monsters
     case treasure
     
-//    func getTitle() {
-//        switch self {
-//        case .creatures: return ""
-//        }
-//    }
-    
+    func getTitle() -> String {
+        switch self {
+        case .creatures:
+            return "🦄 Creatures"
+        case .equipment:
+            return "🏹 Equipment"
+        case .materials:
+            return "🧪 Materials"
+        case .monsters:
+            return "🧌 Monsters"
+        case .treasure:
+            return "💎 Treasure"
+        }
+    }
     
     init(title: String) {
         switch title {
         case "🦄 Creatures":
-            self = Categories.creatures
+            self = Category.creatures
         case "🏹 Equipment":
-            self = Categories.equipment
+            self = Category.equipment
         case "🧪 Materials":
-            self = Categories.materials
+            self = Category.materials
         case "🧌 Monsters":
-            self = Categories.monsters
+            self = Category.monsters
         case "💎 Treasure":
-            self = Categories.treasure
+            self = Category.treasure
         default:
-            self = Categories.creatures
+            self = Category.creatures
         }
     }
 }
@@ -44,25 +52,15 @@ protocol ViewModelProtocol: AnyObject {
 }
 
 protocol ViewModelDelegate: AnyObject {
-    func showCategoryItems()
+    func showCategoryItems(_ category: Category)
     func showError()
-//    func showCreatures() -> [CategoryItem]
-//    func showEquipment() -> [CategoryItem]
-//    func showMasterials() -> [CategoryItem]
-//    func showMonsters() -> [CategoryItem]
-//    func showTreasure() -> [CategoryItem]
 }
 
 class ViewModel: ViewModelProtocol {
-    
     weak var delegate: ViewModelDelegate?
-    var apiService: APIService
-    
+    var apiService: APIService    
     var categoryItems: [CategoryItem] = []
-//    var equipment = []
-//    var materials = []
-//    var monsters = []
-//    var treasure = []
+    var category: Category = Category.creatures
     
     init(delegate: ViewModelDelegate, apiService: APIService = APIService()) {
         self.delegate = delegate
@@ -70,14 +68,14 @@ class ViewModel: ViewModelProtocol {
     }
     
     func fetch(type: String) {
-        let categorie = Categories.init(title: type)
+        category = Category.init(title: type)
         
-        apiService.getCategoryItems(categorie) { categoryItems, error in
+        apiService.getCategoryItems(category) { categoryItems, error in
             if categoryItems.isEmpty {
                 self.delegate?.showError()
             } else {
                 self.categoryItems = categoryItems
-                self.delegate?.showCategoryItems()
+                self.delegate?.showCategoryItems(self.category)
             }
         }
     }
