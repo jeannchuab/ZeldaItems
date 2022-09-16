@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,8 +21,6 @@
 		95AE22E028D4CBA100EF1B72 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AE22DF28D4CBA100EF1B72 /* ViewModel.swift */; };
 		95AE22E228D4CDFF00EF1B72 /* CategoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AE22E128D4CDFF00EF1B72 /* CategoryItem.swift */; };
 		95AE22E428D4FC1000EF1B72 /* CategoryItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AE22E328D4FC1000EF1B72 /* CategoryItemViewController.swift */; };
-		95AE22EE28D5137B00EF1B72 /* CategoryItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95AE22EC28D5137B00EF1B72 /* CategoryItemCell.xib */; };
-		95AE22F228D51B3700EF1B72 /* CategoryItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AE22EB28D5137B00EF1B72 /* CategoryItemCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,8 +59,6 @@
 		95AE22DF28D4CBA100EF1B72 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		95AE22E128D4CDFF00EF1B72 /* CategoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItem.swift; sourceTree = "<group>"; };
 		95AE22E328D4FC1000EF1B72 /* CategoryItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItemViewController.swift; sourceTree = "<group>"; };
-		95AE22EB28D5137B00EF1B72 /* CategoryItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItemCell.swift; sourceTree = "<group>"; };
-		95AE22EC28D5137B00EF1B72 /* CategoryItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryItemCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,8 +186,6 @@
 		95AE22E628D4FCAF00EF1B72 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				95AE22EB28D5137B00EF1B72 /* CategoryItemCell.swift */,
-				95AE22EC28D5137B00EF1B72 /* CategoryItemCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -276,7 +270,7 @@
 				};
 			};
 			buildConfigurationList = 95AE229E28D4BB2000EF1B72 /* Build configuration list for PBXProject "ZeldaItems" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -301,7 +295,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				95AE22B328D4BB2300EF1B72 /* LaunchScreen.storyboard in Resources */,
-				95AE22EE28D5137B00EF1B72 /* CategoryItemCell.xib in Resources */,
 				95AE22B028D4BB2300EF1B72 /* Assets.xcassets in Resources */,
 				95AE22AE28D4BB2000EF1B72 /* Main.storyboard in Resources */,
 			);
@@ -331,7 +324,6 @@
 				95AE22AB28D4BB2000EF1B72 /* HomeViewController.swift in Sources */,
 				95AE22DD28D4C9F100EF1B72 /* Animations.swift in Sources */,
 				95AE22A728D4BB2000EF1B72 /* AppDelegate.swift in Sources */,
-				95AE22F228D51B3700EF1B72 /* CategoryItemCell.swift in Sources */,
 				95AE22E228D4CDFF00EF1B72 /* CategoryItem.swift in Sources */,
 				95AE22D728D4BBB600EF1B72 /* APIService.swift in Sources */,
 				95AE22E028D4CBA100EF1B72 /* ViewModel.swift in Sources */,
