@@ -8,7 +8,7 @@
 import Foundation
 
 class CategoryItem: Codable {
-    var catergory: String?
+    var category: String?
     var commonLocations: [String]?
     var description: String?
     var id: Int
@@ -16,7 +16,7 @@ class CategoryItem: Codable {
     var name: String?
         
     enum CodingKeys: String, CodingKey {
-        case catergory
+        case category
         case commonLocations = "common_locations"
         case description
         case id

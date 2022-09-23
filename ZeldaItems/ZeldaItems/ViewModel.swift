@@ -23,7 +23,7 @@ enum Category: String, CaseIterable {
         case .materials:
             return "🧪 Materials"
         case .monsters:
-            return "🧌 Monsters"
+            return "👹 Monsters"
         case .treasure:
             return "💎 Treasure"
         }
@@ -37,7 +37,7 @@ enum Category: String, CaseIterable {
             self = Category.equipment
         case "🧪 Materials":
             self = Category.materials
-        case "🧌 Monsters":
+        case "👹 Monsters":
             self = Category.monsters
         case "💎 Treasure":
             self = Category.treasure
