@@ -17,8 +17,8 @@ class CategoryItemViewController: UIViewController {
         super.viewDidLoad()        
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UINib(nibName: String(describing: ItemCell.self) , bundle: nil),
-                           forCellReuseIdentifier: String(describing: ItemCell.self))
+        tableView.register(UINib(nibName: String(describing: ItemTableViewCell.self) , bundle: nil),
+                           forCellReuseIdentifier: String(describing: ItemTableViewCell.self))
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -38,23 +38,17 @@ extension CategoryItemViewController: UITableViewDataSource, UITableViewDelegate
         guard
             let categoryItem = self.viewModel?.categoryItems[indexPath.row],
             let item = viewModel?.getCategoryItemFormated(categoryItem),
-            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ItemCell.self),
-                                                       for: indexPath) as? ItemCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ItemTableViewCell.self),
+                                                       for: indexPath) as? ItemTableViewCell
         else {
             return UITableViewCell()
         }
         
-        cell.itemDescription.text = item.name
-        
-        viewModel?.downloadImage(with: self.viewModel?.categoryItems[indexPath.row].image ?? "") { image in
-            cell.imageItem.image = image
-        }
-
+        cell.setup(viewModel: viewModel, categoryItem: item)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         guard let selectedItem = viewModel?.categoryItems[indexPath.row]
         else { return }
         

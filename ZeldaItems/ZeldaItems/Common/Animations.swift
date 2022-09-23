@@ -9,10 +9,10 @@ import UIKit
 
 class Animations {
     static func animateButton(_ viewToAnimate: UIView, completion: @escaping (() -> ())) {
-        UIView.animate(withDuration: 0.15, animations: {
+        UIView.animate(withDuration: 0.10, animations: {
             viewToAnimate.transform = CGAffineTransform(scaleX: 0.90, y: 0.90)
         }){ (_) in
-            UIView.animate(withDuration: 0.15,  animations: {
+            UIView.animate(withDuration: 0.10,  animations: {
                 viewToAnimate.transform = CGAffineTransform(scaleX: 1, y: 1)
                 completion()
             })

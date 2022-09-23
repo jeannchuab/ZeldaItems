@@ -39,7 +39,7 @@ class ViewModel: ViewModelProtocol {
             if categoryItems.isEmpty {
                 self.delegate?.showError()
             } else {
-                self.categoryItems = categoryItems
+                self.categoryItems = categoryItems.sorted(by: { $0.name ?? "" < $1.name ?? "" })                
                 self.delegate?.showCategoryItems(self.category)
             }
         }
@@ -67,10 +67,8 @@ class ViewModel: ViewModelProtocol {
     }
     
     func getCategoryItemFormated(_ item: CategoryItem) -> CategoryItemFormated? {
-        guard let commonLocations = item.commonLocations else { return nil }
-        
         var locationsFormated = ""        
-        for item in commonLocations {
+        for item in item.commonLocations ?? [] {
             if locationsFormated.isEmpty {
                 locationsFormated = "\("Locations: ")\(item)"
             } else {

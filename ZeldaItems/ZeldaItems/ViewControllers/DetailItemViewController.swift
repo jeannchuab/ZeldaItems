@@ -19,6 +19,10 @@ class DetailItemViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        imageItem.layoutIfNeeded()
+        imageItem.layer.masksToBounds = true
+        imageItem.layer.cornerRadius = imageItem.frame.width / 16.0
+        
         guard let categoryItem = viewModel?.getSelectedCategoryItemFormated() else { return }
         
         viewModel?.downloadImage(with: categoryItem.image) { image in
