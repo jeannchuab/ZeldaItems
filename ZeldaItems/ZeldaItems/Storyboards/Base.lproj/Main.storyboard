@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
+        <!--Zelda Items-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="ZeldaItems" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Zelda Items" id="BYZ-38-t0r" customClass="HomeViewController" customModule="ZeldaItems" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -285,8 +285,8 @@
                                     <constraint firstItem="2bI-zA-yNa" firstAttribute="leading" secondItem="AMF-Mn-xSu" secondAttribute="leading" id="oOb-yj-aTh"/>
                                 </constraints>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6R9-pc-YWl">
-                                <rect key="frame" x="16" y="60" width="358" height="358"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gamecontroller" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="6R9-pc-YWl">
+                                <rect key="frame" x="16" y="61.666666666666657" width="358" height="355"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="358" id="UwJ-XD-ffZ"/>
                                 </constraints>
@@ -336,6 +336,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="gamecontroller" catalog="system" width="128" height="80"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

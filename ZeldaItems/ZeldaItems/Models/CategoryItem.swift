@@ -7,7 +7,15 @@
 
 import Foundation
 
-class CategoryItem: Codable {
+struct CategoryItemFormated: Codable {
+    var category: String?
+    var commonLocations: String?
+    var description: String?
+    var image: String?
+    var name: String?
+}
+
+struct CategoryItem: Codable {
     var category: String?
     var commonLocations: [String]?
     var description: String?

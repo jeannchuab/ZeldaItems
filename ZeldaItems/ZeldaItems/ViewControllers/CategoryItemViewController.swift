@@ -14,11 +14,11 @@ class CategoryItemViewController: UIViewController {
     var viewModel: ViewModel?
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
+        super.viewDidLoad()        
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UINib(nibName: String(describing: ItemCell.self) , bundle: nil), forCellReuseIdentifier: String(describing: ItemCell.self))
+        tableView.register(UINib(nibName: String(describing: ItemCell.self) , bundle: nil),
+                           forCellReuseIdentifier: String(describing: ItemCell.self))
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -35,25 +35,19 @@ extension CategoryItemViewController: UITableViewDataSource, UITableViewDelegate
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
                         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ItemCell.self),
+        guard
+            let categoryItem = self.viewModel?.categoryItems[indexPath.row],
+            let item = viewModel?.getCategoryItemFormated(categoryItem),
+            let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ItemCell.self),
                                                        for: indexPath) as? ItemCell
         else {
             return UITableViewCell()
         }
         
-        cell.itemDescription.text = viewModel?.categoryItems[indexPath.row].name?.capitalized
-
-        DispatchQueue.global().async {
-            if let urlPhoto = URL(string: self.viewModel?.categoryItems[indexPath.row].image ?? "") {
-                do {
-                    let data = try Data(contentsOf: urlPhoto)
-                    let image = UIImage(data: data)
-
-                    DispatchQueue.main.async {
-                        cell.imageItem.image = image
-                    }
-                } catch _ {}
-            }
+        cell.itemDescription.text = item.name
+        
+        viewModel?.downloadImage(with: self.viewModel?.categoryItems[indexPath.row].image ?? "") { image in
+            cell.imageItem.image = image
         }
 
         return cell

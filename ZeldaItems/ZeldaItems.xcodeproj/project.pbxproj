@@ -22,6 +22,8 @@
 		95AE22E228D4CDFF00EF1B72 /* CategoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AE22E128D4CDFF00EF1B72 /* CategoryItem.swift */; };
 		95AE22E428D4FC1000EF1B72 /* CategoryItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AE22E328D4FC1000EF1B72 /* CategoryItemViewController.swift */; };
 		95DE1D8D28DE0C160029B8AB /* DetailItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DE1D8C28DE0C160029B8AB /* DetailItemViewController.swift */; };
+		95DE1D9028DE32DE0029B8AB /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DE1D8F28DE32DE0029B8AB /* ImageDownloader.swift */; };
+		95DE1D9328DE3C070029B8AB /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DE1D9228DE3C070029B8AB /* Category.swift */; };
 		95EFA08428D524F700B83734 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EFA08228D524F700B83734 /* ItemCell.swift */; };
 		95EFA08528D524F700B83734 /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95EFA08328D524F700B83734 /* ItemCell.xib */; };
 /* End PBXBuildFile section */
@@ -63,6 +65,8 @@
 		95AE22E128D4CDFF00EF1B72 /* CategoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItem.swift; sourceTree = "<group>"; };
 		95AE22E328D4FC1000EF1B72 /* CategoryItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItemViewController.swift; sourceTree = "<group>"; };
 		95DE1D8C28DE0C160029B8AB /* DetailItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailItemViewController.swift; sourceTree = "<group>"; };
+		95DE1D8F28DE32DE0029B8AB /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		95DE1D9228DE3C070029B8AB /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		95EFA08228D524F700B83734 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		95EFA08328D524F700B83734 /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,17 +119,17 @@
 		95AE22A528D4BB2000EF1B72 /* ZeldaItems */ = {
 			isa = PBXGroup;
 			children = (
-				95AE22E628D4FCAF00EF1B72 /* Views */,
-				95AE22B428D4BB2300EF1B72 /* Info.plist */,
 				95AE22A628D4BB2000EF1B72 /* AppDelegate.swift */,
 				95AE22A828D4BB2000EF1B72 /* SceneDelegate.swift */,
-				95AE22DF28D4CBA100EF1B72 /* ViewModel.swift */,
 				95AE22AF28D4BB2300EF1B72 /* Assets.xcassets */,
+				95AE22B428D4BB2300EF1B72 /* Info.plist */,
 				95AE22DB28D4C9E200EF1B72 /* Common */,
 				95AE22D828D4BBD800EF1B72 /* Models */,
 				95AE22DE28D4CB3F00EF1B72 /* Services */,
 				95AE22DA28D4C14000EF1B72 /* Storyboards */,
 				95AE22D928D4C10C00EF1B72 /* ViewControllers */,
+				95DE1D9428DE3C2A0029B8AB /* ViewModel */,
+				95AE22E628D4FCAF00EF1B72 /* Views */,
 			);
 			path = ZeldaItems;
 			sourceTree = "<group>";
@@ -151,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				95AE22E128D4CDFF00EF1B72 /* CategoryItem.swift */,
+				95DE1D9228DE3C070029B8AB /* Category.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -178,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				95AE22DC28D4C9F100EF1B72 /* Animations.swift */,
+				95DE1D8F28DE32DE0029B8AB /* ImageDownloader.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -197,6 +203,14 @@
 				95EFA08328D524F700B83734 /* ItemCell.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		95DE1D9428DE3C2A0029B8AB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				95AE22DF28D4CBA100EF1B72 /* ViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,10 +351,12 @@
 				95AE22A728D4BB2000EF1B72 /* AppDelegate.swift in Sources */,
 				95DE1D8D28DE0C160029B8AB /* DetailItemViewController.swift in Sources */,
 				95AE22E228D4CDFF00EF1B72 /* CategoryItem.swift in Sources */,
+				95DE1D9028DE32DE0029B8AB /* ImageDownloader.swift in Sources */,
 				95AE22D728D4BBB600EF1B72 /* APIService.swift in Sources */,
 				95AE22E028D4CBA100EF1B72 /* ViewModel.swift in Sources */,
 				95AE22E428D4FC1000EF1B72 /* CategoryItemViewController.swift in Sources */,
 				95AE22A928D4BB2000EF1B72 /* SceneDelegate.swift in Sources */,
+				95DE1D9328DE3C070029B8AB /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
