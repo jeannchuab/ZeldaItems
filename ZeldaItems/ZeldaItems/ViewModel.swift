@@ -61,6 +61,7 @@ class ViewModel: ViewModelProtocol {
     var apiService: APIService    
     var categoryItems: [CategoryItem] = []
     var category: Category = Category.creatures
+    var selectedCategoryItem: CategoryItem?
     
     init(delegate: ViewModelDelegate, apiService: APIService = APIService()) {
         self.delegate = delegate
@@ -78,5 +79,9 @@ class ViewModel: ViewModelProtocol {
                 self.delegate?.showCategoryItems(self.category)
             }
         }
+    }
+    
+    func selectItem(item: CategoryItem) {
+        self.selectedCategoryItem = item
     }
 }

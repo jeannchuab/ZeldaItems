@@ -20,6 +20,12 @@ class CategoryItemViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(UINib(nibName: String(describing: ItemCell.self) , bundle: nil), forCellReuseIdentifier: String(describing: ItemCell.self))
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let viewController = segue.destination as? DetailItemViewController {
+            viewController.viewModel = self.viewModel
+        }
+    }
 }
 
 extension CategoryItemViewController: UITableViewDataSource, UITableViewDelegate {
@@ -34,7 +40,7 @@ extension CategoryItemViewController: UITableViewDataSource, UITableViewDelegate
         else {
             return UITableViewCell()
         }
-
+        
         cell.itemDescription.text = viewModel?.categoryItems[indexPath.row].name?.capitalized
 
         DispatchQueue.global().async {
@@ -51,5 +57,17 @@ extension CategoryItemViewController: UITableViewDataSource, UITableViewDelegate
         }
 
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        guard let selectedItem = viewModel?.categoryItems[indexPath.row]
+        else { return }
+        
+        viewModel?.selectItem(item: selectedItem)
+        
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: "showDetailItem", sender: self)
+        }
     }
 }
