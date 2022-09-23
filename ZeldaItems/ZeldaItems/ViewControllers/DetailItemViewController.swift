@@ -8,8 +8,6 @@
 import UIKit
 
 class DetailItemViewController: UIViewController {
-    
-    
     @IBOutlet weak var imageItem: UIImageView!
     @IBOutlet weak var labelName: UILabel!
     @IBOutlet weak var labelCategory: UILabel!
@@ -37,9 +35,22 @@ class DetailItemViewController: UIViewController {
             }
         }
         
-        labelName.text = categoryItem.name
-//        labelCategory.text = categoryItem?.category
-        labelLocations.text = categoryItem.commonLocations?[0] //TODO
+        labelName.text = categoryItem.name?.capitalized
+        labelCategory.text = Category(rawValue: categoryItem.category ?? "")?.getTitle()
+        
+        labelLocations.text = ""
+        
+        guard let commonLocations = categoryItem.commonLocations
+        else { return }
+        
+        for item in commonLocations {
+            if labelLocations.text?.isEmpty ?? false {
+                labelLocations.text = "\("Locations: ")\(item)"
+            } else {
+                labelLocations.text = "\(labelLocations.text ?? ""), \(item)"
+            }
+        }
+                
         labelDescription.text = categoryItem.description
     }
     
